@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 5px solid red;
+}
+
+.body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.container{
+    height: 75%;
+    width: 27.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+
+.title{
+    padding: 5px;
+    text-align: center;
+}
+
+div.screen{
+    display: flex;
+    flex-direction: column;
+    width:90%;
+    height: 20%;
+}
+
+.bot{
+    flex-grow: 2;
+}
+
+.top{
+    flex:1;
+}
+
+.interface{
+    display: flex;
+    height: 80%;
+    width: 90%;
+}
+
+.interface div{
+    flex:1;
+   
+}
+
+
+
+
+
