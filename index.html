@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="body">
@@ -12,21 +14,39 @@
             <div class="title"><h1>Calculator</h1></div>
             <div class="screen">
                 <div class="top"></div>
-                <div class="bot"></div>
+                <div class="bot">0</div>
             </div>
             <div class="interface">
-                <div class="first-col">                
+                <div class="col">
+                    <button class="clear operator"><i class="fa-solid fa-trash"></i></button>               
+                    <button class="number number-7">7</button>
+                    <button class="number number-4">4</button>
+                    <button class="number number-1">1</button>
+                    <button class="number number-0">0</button>
                 </div>
-                <div class="second-col">
+                <div class="col">
+                    <button class="del operator"><i class="fa-solid fa-delete-left"></i></button>
+                    <button class="number number-8">8</button>
+                    <button class="number number-5">5</button>
+                    <button class="number number-2">2</button>
+                    <button class="dot">.</button>
                 </div>
-                <div class="third-col">                
+                <div class="col">
+                    <button class="power operator"><i class="fa-solid fa-superscript"></i></button>
+                    <button class="number number-9">9</button>
+                    <button class="number number-6">6</button>
+                    <button class="number number-3">3</button>
+                    <button class="result">=</button>                
                 </div>
-                <div class="fourth-col">                
-                </div>
-                <div class="fifth-col">                 
+                <div class="col">
+                    <button class="division operator">/</button>
+                    <button class="multiply operator">*</button>
+                    <button class="subtract operator">-</button>
+                    <button class="add operator">+</button>
                 </div>
             </div>
         </div>
     </div>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
