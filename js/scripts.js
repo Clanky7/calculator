@@ -1,7 +1,6 @@
 let calculator = {
     num1: "",
     num2: "",
-    lastOperator:null,
     operator: null,
     currentExpression:"",
     result: "",
@@ -63,13 +62,27 @@ let calculator = {
             case "/":
                 this.result = b === 0 ? "Error" : (a / b).toString();
                 break;
+            case "^":
+                this.result = this.pow(a,b).toString();
+                break;
+        }
+        if (this.result.length > 12) {
+            this.result = Number(this.result).toExponential(6);
         }
         this.num1 = this.result;
         this.num2 = "";
-        this.topScreen.textContent = this.currentExpression + " " + this.num2;
+        this.topScreen.textContent = this.currentExpression;
         this.botScreen.textContent = this.result;
         this.lastOperator = this.operator;
         this.operator = null;
+    },
+
+    pow(num1,num2){
+        let result = 1;
+        for (let i = 0; i < Number(num2); i++){
+            result *= Number(num1);
+        }
+        return result;
     },
  
     clear(){
@@ -77,7 +90,6 @@ let calculator = {
         this.num2 = "";
         this.currentExpression = "";
         this.operator = null;
-        this.lastOperator = null;
         this.result = "";
         this.botScreen.textContent = "0";
         this.topScreen.textContent = "";
@@ -99,10 +111,14 @@ ui.addEventListener('click', e => {
         calculator.clear();
     } else if (cls.contains("result")) {
         calculator.calculate();
-    } else if (cls.contains("operator")) {
-        calculator.setOperation(btn.textContent);
-        
     }
+    else if (cls.contains("power")){
+        calculator.setOperation("^");
+    } 
+    else if (cls.contains("operator")) {
+        calculator.setOperation(btn.textContent);    
+    }
+   
 });
 
 
